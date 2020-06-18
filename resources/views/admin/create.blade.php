@@ -14,6 +14,9 @@
       <div>
         <label for="body">本文</label>
         <textarea name="body" id="body" rows="4" value="{{ old('body') }}"></textarea>
+        @if ($errors->has('body'))
+            <div>{{ $errors->first('body') }}</div>
+          @endif
       </div>
       <button type="submit">投稿</button>
       <a href="{{ route('admin.posts') }}">キャンセル</a>

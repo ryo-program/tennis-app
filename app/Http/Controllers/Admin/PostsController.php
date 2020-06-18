@@ -10,7 +10,7 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
         return view('admin.posts', ['posts' => $posts]);
     }
@@ -44,9 +44,16 @@ class PostsController extends Controller
         return view('admin.edit', ['post' => $post]);
     }
 
-    public function update()
+    public function update(Request $request, $post_id)
     {
+        $params = $request->validate([
+            'title' => 'required|max: 50',
+            'body' => 'required|max: 2000',
+        ]);
 
+        $post = Post::findOrFail($post_id);
+        $post->fill($params)->save();
+        return redirect()->route('admin.posts.show', ['post' => $post]);
     }
 
     public function destroy($post_id)
