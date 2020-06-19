@@ -16,7 +16,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-            <a href="{{ route('admin.top') }}">ホームに戻る</a>
+            <a href="{{ route('admin.top') }}">TENNIS CLUB</a>
                 <!-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a> -->

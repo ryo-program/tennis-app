@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
+
 @section('content')
-<!-- <a href="{{ route('admin.top') }}">ホームに戻る</a> -->
 <div class="post-head">
   <h1 class="section-title">-- CLUB INFORMATION --</h1>
   <a href="{{ route('admin.posts.create') }}" class="add-post">+</a>

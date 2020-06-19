@@ -26,7 +26,7 @@
           <!-- <label for="body">本文</label> -->
           <textarea name="body" id="body"  rows="10">{{ old('body') }}</textarea>
           @if ($errors->has('body'))
-            <p>{{ $errors->first('body') }}</p>
+            <p class="error">{{ $errors->first('body') }}</p>
           @endif
         </div>
         <button type="submit">コメントする</button>

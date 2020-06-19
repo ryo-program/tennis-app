@@ -10,14 +10,14 @@
           <label for="title">タイトル</label>
           <input type="text" id="title" value="{{ old('title') ?: $post->title }}" name="title">
           @if ($errors->has('title'))
-            <div>{{ $errors->first('title') }}</div>
+            <p class="error">{{ $errors->first('title') }}</p>
           @endif
         </div>
         <div>
           <label for="body">本文</label>
           <textarea name="body" id="body" rows="4">{!! nl2br(e($post->body)) !!}</textarea>
           @if ($errors->has('body'))
-            <div>{{ $errors->first('body') }}</div>
+            <p class="error">{{ $errors->first('body') }}</p>
           @endif
         </div>
         <button type="submit">更新</button>

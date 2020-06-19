@@ -1,6 +1,9 @@
 h1, p {
   margin: 0;
 }
+.error {
+  color: red;
+}
 .middle {
   font-size: 20px;
 }
@@ -8,8 +11,26 @@ h1, p {
   text-align: center;
   color: #000;
 }
+.members {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
 .home {
-  color: #e0c56c;
+  text-align: center;
+  color: #e0bb6c;
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  h1 {
+    font-size: 60px;
+    margin-bottom: 15px;
+  }
+  a {
+    margin-right: 20px;
+  }
 }
 .post-head {
   display: flex;
@@ -29,7 +50,8 @@ h1, p {
     margin-left: auto;
   }
 }
-textarea {
+textarea, input {
+  
   width: 70%;
 }
 ul {
