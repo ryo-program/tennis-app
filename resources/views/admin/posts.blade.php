@@ -1,29 +1,16 @@
 @extends('layouts.admin.app')
-
-<style>
-  .post {
-    width: 80%;
-    margin: 30px auto;
-  }
-  .post-item {
-    margin-top: 40px;
-  }
-  .add-post {
-    font-size: 50px;
-    float: right;
-  }
-</style>
-
 @section('content')
-<a href="{{ route('admin.top') }}">ホームに戻る</a>
-<a href="{{ route('admin.posts.create') }}" class="add-post">+</a>
-<h1>CLUB INFORMATION</h1>
+<!-- <a href="{{ route('admin.top') }}">ホームに戻る</a> -->
+<div class="post-head">
+  <h1 class="section-title">-- CLUB INFORMATION --</h1>
+  <a href="{{ route('admin.posts.create') }}" class="add-post">+</a>
+</div>
 <div class="post">
   @foreach ($posts as $post)
     <div class="post-item">
       <h1>{{ $post->title }}</h1>
       <small>({{ $post->created_at->format('Y/m/d') }})</small>
-      <p>{{ $post->body }}</p>
+      <p class="post-body">{{ $post->body }}</p>
       <div class="post-item-comment">
         @if ($post->comments->count())
           <p>コメント： {{ $post->comments->count() }}件</p>

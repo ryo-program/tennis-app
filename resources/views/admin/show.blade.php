@@ -1,21 +1,18 @@
 @extends('layouts.admin.app')
 
 @section('content')
-  <div>
-    <div>
-      <div class="add-title">
-        <h1>{{ $post->title }}</h1>
-      </div>
-      <div>
-        <p>{!! nl2br(e($post->body)) !!}</p>
-      </div>
-
+  <div class="post">
+    <div class="post-item">
+      <h1>{{ $post->title }}</h1>
+      <small>({{ $post->created_at->format('Y/m/d') }})</small>
+      <p class="post-body">{!! nl2br(e($post->body)) !!}</p>
+      
       <div class="comment">
-        <h3>コメント</h3>
+        <p class="middle">＜コメント＞</p>
         @forelse ($post->comments as $comment)
           <div>
-            <time>{{ $comment->created_at->format('Y/m/d') }}</time>
             <p>{!! nl2br(e($comment->body)) !!}</p>
+            <small>({{ $comment->created_at->format('Y/m/d') }})</small>
           </div>
         @empty
           <p>コメントはありません。</p>
@@ -26,7 +23,7 @@
         @csrf
         <input type="hidden" name="post_id" value="{{ $post->id }}">
         <div>
-          <label for="body">本文</label>
+          <!-- <label for="body">本文</label> -->
           <textarea name="body" id="body"  rows="10">{{ old('body') }}</textarea>
           @if ($errors->has('body'))
             <p>{{ $errors->first('body') }}</p>
@@ -38,10 +35,12 @@
       <form action="{{ route('admin.posts.destroy', ['post' => $post]) }}" method="POST">
         @csrf
         @method('DELETE')
-        <button>削除</button>
+        <button>投稿を削除</button>
       </form>
-      <a href="{{ route('admin.posts.edit', ['post' => $post]) }}">編集</a>
-      <a href="{{ route('admin.posts') }}">一覧へ戻る</a>
+      <ul>
+        <li><a href="{{ route('admin.posts.edit', ['post' => $post]) }}">編集</a></li>
+        <li><a href="{{ route('admin.posts') }}">一覧へ戻る</a></li>
+      </ul>
     </div>
   </div>
 @endsection

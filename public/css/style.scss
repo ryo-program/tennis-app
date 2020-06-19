@@ -1,8 +1,62 @@
+h1, p {
+  margin: 0;
+}
+.middle {
+  font-size: 20px;
+}
+.section-title {
+  text-align: center;
+  color: #000;
+}
 .home {
   color: #e0c56c;
 }
+.post-head {
+  display: flex;
+  max-width: 1170px;
+  margin: 0 auto;
+  position: relative;
+  h1 {
+    line-height: 80px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .add-post {
+    font-size: 50px;
+    display: block;
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+textarea {
+  width: 70%;
+}
+ul {
+  display: flex;
+  li {
+    list-style: none;
+    margin-right: 15px;
+  }
+}
+.form {
+  // display: flex;
+}
 
-// .post {
-//   width: 80%;
-//   background-color: #333;
-// }
+.post {
+  max-width: 1170px;
+  width: 80%;
+  margin: 0 auto;
+  .post-item {
+    background-color: #fff;
+    margin: 20px auto;
+    border: 2px solid rgb(189, 224, 182);
+    padding: 10px 20px;
+    .post-body {
+      margin: 20px 0;
+    }
+  }
+}
+.content-item {
+  border: 3px solid #333
+}
