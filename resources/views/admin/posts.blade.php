@@ -3,7 +3,7 @@
 @section('content')
 <div class="post-head">
   <h1 class="section-title">-- CLUB INFORMATION --</h1>
-  <a href="{{ route('admin.posts.create') }}" class="add-post">+</a>
+  <a href="{{ route('admin.posts.create') }}" class="add-post cB">+</a>
 </div>
 <div class="post">
   @foreach ($posts as $post)

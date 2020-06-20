@@ -1,7 +1,14 @@
 @extends('layouts.admin.app')
 
+<!-- <style>
+.home-container {
+  background-image: url('/public/img/tennisball.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vw;
+}
+</style> -->
 @section('content')
-
 <!-- <div class="card">
     <div class="card-header">Dashboard</div>
         @if (session('status'))

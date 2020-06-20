@@ -9,6 +9,16 @@ class MembersController extends Controller
 {
     public function index()
     {
-        return view('admin.members');
+        return view('admin.members.members');
+    }
+
+    public function create()
+    {
+        return view('admin.members.create');
+    }
+
+    public function store(Request $request)
+    {
+        
     }
 }

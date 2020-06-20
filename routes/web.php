@@ -36,6 +36,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::resource('posts', 'PostsController', ['only' => ['create', 'store', 'show', 'destroy', 'edit', 'update']]);
         Route::resource('comments', 'CommentsController', ['only' => ['store']]);
         Route::get('members', 'MembersController@index')->name('members');
+        Route::resource('members', 'MembersController', ['only' => ['create', 'store']]);
     });
 
 });

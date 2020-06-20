@@ -1,8 +1,13 @@
+$cBlack: #333;
+
 h1, p {
   margin: 0;
 }
 .error {
   color: red;
+}
+.cB {
+  color: $cBlack;
 }
 .middle {
   font-size: 20px;
@@ -15,7 +20,12 @@ h1, p {
   max-width: 1170px;
   margin: 0 auto;
 }
-
+.home-container {
+  background-image: url('/public/img/tennisball.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vw;
+}
 .home {
   text-align: center;
   color: #e0bb6c;
@@ -60,9 +70,6 @@ ul {
     list-style: none;
     margin-right: 15px;
   }
-}
-.form {
-  // display: flex;
 }
 
 .post {
