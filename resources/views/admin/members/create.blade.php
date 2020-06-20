@@ -13,9 +13,30 @@
             <p class="error">{{ $errors->first('name') }}</p>
           @endif
         </div>
+
+        <dl>
+          <dt>学年</dt>
+          <dd>
+            <input type="radio" name="year" value="1" id="first">
+            <label for="first">1年生</label>
+            <input type="radio" name="year" value="2" id="second">
+            <label for="second">2年生</label>
+            <input type="radio" name="year" value="3" id="third">
+            <label for="third">3年生</label>
+          </dd>
+        </dl>
+
+        <div>
+          <p>得意なショット</p>
+          <textarea name="shot" rows="4" value="{{ old('shot') }}"></textarea>
+          @if ($errors->has('shot'))
+            <p class="error">{{ $errors->first('shot') }}</p>
+          @endif
+        </div>
+
         <div>
           <p>コメント</p>
-          <textarea name="body" rows="4" value="{{ old('comment') }}"></textarea>
+          <textarea name="comment" rows="4" value="{{ old('comment') }}"></textarea>
           @if ($errors->has('comment'))
             <p class="error">{{ $errors->first('comment') }}</p>
           @endif

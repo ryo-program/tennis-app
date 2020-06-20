@@ -19,6 +19,18 @@ h1, p {
   color: #000;
 }
 
+.link {
+  color: #333;
+  font-size: 35px;
+  border: 1px solid #333;
+  padding: 10px 15px;
+}
+
+.link:hover {
+  color: #afacac;
+  text-decoration: none;
+}
+
 .members {
   max-width: 1170px;
   margin: 0 auto;
@@ -71,7 +83,7 @@ h1, p {
   margin-left: auto;
 }
 
-textarea, input {
+textarea {
   width: 70%;
 }
 

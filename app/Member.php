@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Members extends Model
+class Member extends Model
 {
     protected $fillable = [
-        'name', 'shot', 'comment',
+        'name', 'year', 'shot', 'comment',
     ];
 
 }

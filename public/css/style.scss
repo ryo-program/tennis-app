@@ -15,6 +15,17 @@ h1, p {
 .section-title {
   text-align: center;
   color: #000;
+
+}
+.link {
+  color: $cBlack;
+  font-size: 35px;
+  border: 1px solid $cBlack;
+  padding: 10px 15px;
+  &:hover {
+    color: rgb(175, 172, 172);
+    text-decoration: none;
+  }
 }
 .members {
   max-width: 1170px;
@@ -60,7 +71,7 @@ h1, p {
     margin-left: auto;
   }
 }
-textarea, input {
+textarea {
   
   width: 70%;
 }

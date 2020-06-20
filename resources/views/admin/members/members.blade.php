@@ -2,14 +2,17 @@
 
 @section('content')
   <div class="member-header">
-  <h1 class="section-title">-- MEMBERS --</h1>
+  <div class="post-head">
+    <h1 class="section-title">-- MEMBERS --</h1>
+    <a href="{{ route('admin.members.create') }}" class="add-post cB">+</a>
+  </div>
     <ul>
-      <li><a href="#">1年</a></li>
-      <li><a href="#">2年</a></li>
-      <li><a href="#">3年</a></li>
+      <li><a href="{{ route('admin.first') }}" class="link">1年</a></li>
+      <li><a href="{{ route('admin.second') }}" class="link">2年</a></li>
+      <li><a href="{{ route('admin.third') }}" class="link">3年</a></li>
     </ul>
   </div>
-  <div class="members">
+  <!-- <div class="members">
     <div class="member-item">
       <img src="" alt="">
       <div class="intro">
@@ -19,6 +22,6 @@
         <p>~ コメント ~</p>
         <p>越前リョーマです！最強すぎて困ってます。誰か僕のこと倒してみない？まぁ、無理だと思うけどね(笑)</p>
       </div>
-    </div>
+    </div> -->
   </div>
 @endsection

@@ -10,7 +10,7 @@ class CreateMembersTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('category_id');
+            $table->integer('year');
             $table->string('name');
             $table->text('shot');
             $table->text('comment');
