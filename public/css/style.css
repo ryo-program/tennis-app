@@ -2,6 +2,10 @@ h1, p {
   margin: 0;
 }
 
+ul {
+  padding: 0;
+}
+
 .error {
   color: red;
 }
@@ -21,14 +25,21 @@ h1, p {
 
 .link {
   color: #333;
-  font-size: 35px;
+  font-size: 30px;
   border: 1px solid #333;
   padding: 10px 15px;
+  box-sizing: border-box;
 }
 
 .link:hover {
   color: #afacac;
   text-decoration: none;
+}
+
+.bcenter {
+  max-width: 1170px;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .members {
@@ -65,7 +76,7 @@ h1, p {
 .post-head {
   display: flex;
   max-width: 1170px;
-  margin: 0 auto;
+  margin: 20px auto;
   position: relative;
 }
 
@@ -93,7 +104,10 @@ ul {
 
 ul li {
   list-style: none;
-  margin-right: 15px;
+}
+
+ul li:not(:last-child) {
+  margin-right: 30px;
 }
 
 .post {

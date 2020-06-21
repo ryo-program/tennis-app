@@ -4,7 +4,7 @@
   <div>
     <h1 class="section-title">-- 選手追加 --</h1>
     <div class="post">
-      <form action="{{ route('admin.members.store') }}" method="POST" class="post-item">
+      <form action="{{ route('admin.members.store') }}" method="POST" class="post-item" enctype="multipart/form-data">
         @csrf
         <div class="add-title">
           <p>名前</p>
@@ -40,6 +40,10 @@
           @if ($errors->has('comment'))
             <p class="error">{{ $errors->first('comment') }}</p>
           @endif
+        </div>
+        <div>
+          <p>画像</p>
+          <input type="file" name="img" >
         </div>
         <button type="submit">投稿</button>
         <a href="{{ route('admin.members') }}">キャンセル</a>
