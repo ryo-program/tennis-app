@@ -1,4 +1,4 @@
-h1, p {
+h1, p, dl, figure {
   margin: 0;
 }
 
@@ -24,16 +24,32 @@ ul {
 }
 
 .link {
-  color: #333;
-  font-size: 30px;
-  border: 1px solid #333;
+  font-size: 24px;
   padding: 10px 15px;
   box-sizing: border-box;
+  border-radius: 5px;
 }
 
 .link:hover {
   color: #afacac;
   text-decoration: none;
+}
+
+.member-item {
+  position: relative;
+}
+
+.member-item .del {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+
+.btn, .link {
+  color: #333;
+  background-color: #e4e2e2;
+  border: 1px solid #333;
+  margin: 10px 0;
 }
 
 .bcenter {
@@ -111,7 +127,7 @@ ul li:not(:last-child) {
 }
 
 .post {
-  max-width: 1170px;
+  max-width: 1070px;
   width: 80%;
   margin: 0 auto;
 }
@@ -129,5 +145,17 @@ ul li:not(:last-child) {
 
 .content-item {
   border: 3px solid #333;
+}
+
+.profile-item {
+  display: flex;
+}
+
+.profile-item > figure {
+  width: 40%;
+}
+
+.profile-item > dl {
+  width: 60%;
 }
 /*# sourceMappingURL=style.css.map */

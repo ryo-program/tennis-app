@@ -43,9 +43,9 @@
         </div>
         <div>
           <p>画像</p>
-          <input type="file" name="img" >
+          <input type="file" name="profile_img" >
         </div>
-        <button type="submit">投稿</button>
+        <button type="submit">選手追加</button>
         <a href="{{ route('admin.members') }}">キャンセル</a>
       </form>
     </div>

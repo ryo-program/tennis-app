@@ -20,14 +20,26 @@ class MembersController extends Controller
 
     public function store(Request $request)
     {
-        $params = $request->validate([
-            'name' => 'required|max: 30',
-            'year' => 'required',
-            'shot' => 'required|max: 50',
-            'comment' => 'max: 1000',
-        ]);
+        $this->validate($request, Member::$rules);
 
-        Member::create($params);
+        if ($file = $request->profile_img) {
+            // 保存するファイルに名前をつける
+            $fileName = time() . $file->getClientOriginalName();
+            //Laravel直下のpublicディレクトリに新フォルダをつくり保存する
+            $target_path = public_path('uploads/');
+            $file->move($target_path, $fileName);
+        } else {
+            $fileName = "";
+        }
+
+        $member = new Member;
+        $member->name = $request->name;
+        $member->year = $request->year;
+        $member->shot = $request->shot;
+        $member->comment = $request->comment;
+        $member->profile_img = $fileName;
+        $member->save();
+        
         return redirect()->route('admin.members');
     }
 
@@ -47,5 +59,15 @@ class MembersController extends Controller
     {
         $members = Member::orderBy('created_at', 'desc')->where('year', '3')->get();
         return view('admin.members.third', ['members' => $members]);
+    }
+
+    public function destroy($id)
+    {
+        $member = Member::findOrFail($id);
+        \DB::transaction(function() use ($member) {
+            $member->delete();
+        });
+
+        return redirect()->route('admin.members');
     }
 }

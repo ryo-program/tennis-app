@@ -23,9 +23,9 @@
 <div class="home-container">
     <div class="home">
         <h1>Tennis Club Introduction!</h1>
-        <a href="{{route('admin.posts')}}">掲示板</a>
-        <a href="#">メッセージ</a>
-        <a href="{{ route('admin.members') }}">メンバー紹介</a>
+        <a href="{{route('admin.posts')}}" class="link">掲示板</a>
+        <a href="#" class="link">メッセージ</a>
+        <a href="{{ route('admin.members') }}" class="link">メンバー紹介</a>
     </div>
 </div>
        

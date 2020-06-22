@@ -39,7 +39,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('members/first', 'MembersController@first')->name('first');
         Route::get('members/second', 'MembersController@second')->name('second');
         Route::get('members/third', 'MembersController@third')->name('third');
-        Route::resource('members', 'MembersController', ['only' => ['create', 'store']]);
+        Route::resource('members', 'MembersController', ['only' => ['create', 'store', 'destroy']]);
     });
 
 });

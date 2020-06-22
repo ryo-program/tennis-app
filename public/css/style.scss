@@ -1,6 +1,5 @@
 $cBlack: #333;
-
-h1, p {
+h1, p, dl, figure {
   margin: 0;
 }
 ul {
@@ -18,23 +17,35 @@ ul {
 .section-title {
   text-align: center;
   color: #000;
-
 }
 .link {
-  color: $cBlack;
-  font-size: 30px;
-  border: 1px solid $cBlack;
+  font-size: 24px;
   padding: 10px 15px;
   box-sizing: border-box;
+  border-radius: 5px;
   &:hover {
     color: rgb(175, 172, 172);
     text-decoration: none;
   }
 }
+.member-item {
+  position: relative;
+  .del {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+  }
+}
+.btn, .link {
+  color: $cBlack;
+  background-color: rgb(228, 226, 226);
+  border: 1px solid $cBlack;
+  margin: 10px 0;
+}
+
 .bcenter {
   max-width: 1170px;
   margin: 0 auto;
-  // text-align: center;
   justify-content: center;
 } 
 .members {
@@ -82,7 +93,6 @@ ul {
   }
 }
 textarea {
-  
   width: 70%;
 }
 ul {
@@ -96,7 +106,7 @@ ul {
 }
 
 .post {
-  max-width: 1170px;
+  max-width: 1070px;
   width: 80%;
   margin: 0 auto;
   .post-item {
@@ -111,4 +121,13 @@ ul {
 }
 .content-item {
   border: 3px solid #333
+}
+.profile-item {
+  display: flex;
+  & > figure {
+    width: 40%;
+  }
+  & > dl {
+    width: 60%;
+  }
 }

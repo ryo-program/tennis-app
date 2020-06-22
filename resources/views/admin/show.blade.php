@@ -29,13 +29,13 @@
             <p class="error">{{ $errors->first('body') }}</p>
           @endif
         </div>
-        <button type="submit">コメントする</button>
+        <button type="submit" class="btn">コメントする</button>
       </form>
 
       <form action="{{ route('admin.posts.destroy', ['post' => $post]) }}" method="POST">
         @csrf
         @method('DELETE')
-        <button>投稿を削除</button>
+        <button class="btn">投稿を削除</button>
       </form>
       <ul>
         <li><a href="{{ route('admin.posts.edit', ['post' => $post]) }}">編集</a></li>
