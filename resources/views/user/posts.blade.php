@@ -1,9 +1,8 @@
-@extends('layouts.admin.app')
+@extends('layouts.user.app')
 
 @section('content')
 <div class="section-head">
   <h1 class="section-title">〜 Club Information 〜</h1>
-  <a href="{{ route('admin.posts.create') }}" class="add cB">+</a>
 </div>
 <div class="center-width">
   @foreach ($posts as $post)
@@ -18,7 +17,7 @@
           <p>コメント： 0件</p>
         @endif
       </div>
-      <a href="{{ route('admin.posts.show', ['post' => $post]) }}" class="link">詳細</a>
+      <a href="{{ route('user.posts.show', ['post' => $post]) }}" class="link">詳細</a>
     </div>
   @endforeach
   <div class="d-flex justify-content-center mb-5">

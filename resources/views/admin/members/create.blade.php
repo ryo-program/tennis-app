@@ -3,7 +3,7 @@
 @section('content')
   <div>
     <h1 class="section-title">-- 選手追加 --</h1>
-    <div class="post">
+    <div class="center-width">
       <form action="{{ route('admin.members.store') }}" method="POST" class="post-item" enctype="multipart/form-data">
         @csrf
         <div class="add-title">

@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.user.app')
 
 @section('content')
   <div class="center-width">
@@ -31,15 +31,8 @@
         </div>
         <button type="submit" class="btn">コメントする</button>
       </form>
-
-      <form action="{{ route('admin.posts.destroy', ['post' => $post]) }}" method="POST">
-        @csrf
-        @method('DELETE')
-        <button class="btn">投稿を削除</button>
-      </form>
       <ul>
-        <li><a href="{{ route('admin.posts.edit', ['post' => $post]) }}" class="link">編集</a></li>
-        <li><a href="{{ route('admin.posts') }}" class="link">一覧へ戻る</a></li>
+        <li><a href="{{ route('user.posts') }}" class="link">一覧へ戻る</a></li>
       </ul>
     </div>
   </div>

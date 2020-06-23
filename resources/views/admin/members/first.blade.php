@@ -1,7 +1,7 @@
 @extends('layouts.admin.app')
 
 @section('content')
-<div class="post">
+<div class="center-width">
   @foreach ($members as $member)
     <div class="post-item member-item">
       <form action="{{ route('admin.members.destroy', ['member' => $member]) }}" method="POST">

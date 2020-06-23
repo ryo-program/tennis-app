@@ -1,7 +1,7 @@
 @extends('layouts.admin.app')
 
 @section('content')
-<div class="post">
+<div class="center-width">
   @foreach ($members as $member)
     <div class="post-item">
       <dl>

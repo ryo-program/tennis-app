@@ -13,6 +13,8 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
     Route::middleware('auth:user')->group(function () {
 
         // TOPページ
+        Route::get('posts', 'PostsController@index')->name('posts');
+        Route::resource('posts', 'PostsController', ['only' => [ 'show']]);
         Route::resource('home', 'HomeController', ['only' => 'index']);
 
     });

@@ -14,13 +14,13 @@
 
 <body>
   <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
-            <a href="{{ route('admin.top') }}" class="cB">TENNIS CLUB</a>
-            <ul>
-                <li><a href="{{ route('admin.posts') }}">掲示板</a></li>
-                <li><a href="#">メッセージ</a></li>
-                <li><a href="{{ route('admin.members') }}">メンバー紹介</a></li>
+            <a href="{{ route('admin.top') }}" class="header-link">TENNIS CLUB</a>
+            <ul class="header-ul">
+                <li><a href="{{ route('admin.posts') }}" class="header-link">掲示板</a></li>
+                <li><a href="#" class="header-link">メッセージ</a></li>
+                <li><a href="{{ route('admin.members') }}" class="header-link">メンバー紹介</a></li>
             </ul>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -38,7 +38,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class=" dropdown-toggle white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
