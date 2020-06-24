@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="center-width">
+<div class="section-top">
+  <h1 class="section-top-title">〜 1年生 〜</h1>
+</div>
   @foreach ($members as $member)
     <div class="post-item member-item">
       <form action="{{ route('admin.members.destroy', ['member' => $member]) }}" method="POST">
@@ -11,7 +14,7 @@
       </form>
       <div  class="profile-item">
         <figure>
-          <img src="../../uploads/{{ $member->profile_img }}" width="200px" height="200px">
+          <img src="../../uploads/{{ $member->profile_img }}" width="240px" height="200px">
         </figure>
         <dl>
           <dt>〜 名前 〜</dt>

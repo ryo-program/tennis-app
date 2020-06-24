@@ -2,8 +2,12 @@
 
 @section('content')
   <div>
-    <h1 class="section-title">-- 選手追加 --</h1>
+
+    <!-- <h1 class="section-title">-- 選手追加 --</h1> -->
     <div class="center-width">
+    <div class="section-top">
+      <h1 class="section-top-title">〜 選手追加 〜</h1>
+    </div>
       <form action="{{ route('admin.members.store') }}" method="POST" class="post-item" enctype="multipart/form-data">
         @csrf
         <div class="add-title">
@@ -45,7 +49,7 @@
           <p>画像</p>
           <input type="file" name="profile_img" >
         </div>
-        <button type="submit">選手追加</button>
+        <button type="submit" class="link">選手追加</button>
         <a href="{{ route('admin.members') }}">キャンセル</a>
       </form>
     </div>

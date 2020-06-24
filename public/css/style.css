@@ -26,6 +26,18 @@ h1, p, dl, figure, ul {
   margin: 0;
 }
 
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+input[type=radio] {
+  display: inline;
+}
+
 .header-link {
   color: #fff;
   border: 1px solid #fff;
@@ -47,8 +59,34 @@ a:hover {
   width: 80%;
 }
 
-ul {
-  padding: 0;
+main.py-4 {
+  padding: 0 !important;
+}
+
+.home-container {
+  background-image: url("../img/tennisball.jpg");
+  background-position: top;
+  background-size: cover;
+  height: 770px;
+}
+
+.home {
+  text-align: center;
+  color: #e0bb6c;
+  position: absolute;
+  width: 80%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.home h1 {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.home a {
+  margin-right: 20px;
 }
 
 .error {
@@ -67,6 +105,27 @@ ul {
   text-align: center;
   color: #333;
   font-size: 35px;
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  background-color: #739ddd;
+  margin: 5px 0;
+  margin-right: 8px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0;
+}
+
+.btn:hover {
+  opacity: 0.8;
+  color: #fff;
+}
+
+.del-btn {
+  background-color: #df6f6f;
 }
 
 .link {
@@ -94,13 +153,6 @@ ul {
   right: 20px;
 }
 
-.btn {
-  color: #333;
-  background-color: #e4e2e2;
-  border: 1px solid #333;
-  margin: 10px 0;
-}
-
 .member-link {
   display: flex;
   justify-content: center;
@@ -113,32 +165,6 @@ ul {
 .members {
   max-width: 1170px;
   margin: 0 auto;
-}
-
-.home-container {
-  background-image: url("/public/img/tennisball.jpg");
-  background-position: center;
-  background-size: cover;
-  height: 100vw;
-}
-
-.home {
-  text-align: center;
-  color: #e0bb6c;
-  position: absolute;
-  width: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.home h1 {
-  font-size: 60px;
-  margin-bottom: 15px;
-}
-
-.home a {
-  margin-right: 20px;
 }
 
 .section-head {
@@ -162,8 +188,18 @@ ul {
   margin-left: auto;
 }
 
+.section-top {
+  max-width: 1070px;
+  margin: 20px auto;
+}
+
+.section-top .section-top-title {
+  text-align: center;
+  line-height: 80px;
+}
+
 textarea, input {
-  width: 50%;
+  width: 60%;
 }
 
 textarea {

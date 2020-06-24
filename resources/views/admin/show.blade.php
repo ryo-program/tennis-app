@@ -2,6 +2,9 @@
 
 @section('content')
   <div class="center-width">
+  <div class="section-top">
+    <h1 class="section-top-title">〜 投稿の詳細 〜</h1>
+  </div>
     <div class="post-item">
       <h1>{{ $post->title }}</h1>
       <small>({{ $post->created_at->format('Y/m/d') }})</small>
@@ -35,7 +38,7 @@
       <form action="{{ route('admin.posts.destroy', ['post' => $post]) }}" method="POST">
         @csrf
         @method('DELETE')
-        <button class="btn">投稿を削除</button>
+        <button class="btn del-btn">投稿を削除</button>
       </form>
       <ul>
         <li><a href="{{ route('admin.posts.edit', ['post' => $post]) }}" class="link">編集</a></li>

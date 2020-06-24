@@ -21,6 +21,15 @@ body {
 h1, p, dl, figure, ul {
   margin: 0;
 }
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+input[type=radio] {
+  display: inline;
+}
 .header-link {
   color: #fff;
   border: 1px solid #fff;
@@ -40,9 +49,36 @@ a {
   margin: 0 auto;
   width: 80%;
 }
-ul {
-  padding: 0;
+
+// ホーム
+main.py-4 {
+  padding: 0 !important;
 }
+
+.home-container {
+  background-image: url('../img/tennisball.jpg');
+  background-position: top;
+  background-size: cover;
+  height: 770px;
+}
+
+.home {
+  text-align: center;
+  color: #e0bb6c;
+  position: absolute;
+  width: 80%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  h1 {
+    font-size: 60px;
+    margin-bottom: 15px;
+  }
+  a {
+    margin-right: 20px;
+  }
+}
+
 .error {
   color: red;
 }
@@ -57,6 +93,25 @@ ul {
   color: $cBlack;
   font-size: 35px;
 }
+.btn {
+  display: inline-block;
+  color: #fff;
+  background-color: $cVase;
+  margin: 5px 0;
+  margin-right: 8px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0;
+  &:hover {
+    opacity: 0.8;
+    color: #fff;
+  }
+}
+.del-btn {
+  background-color: rgb(223, 111, 111);
+}
+
 .link {
   display: inline-block;
   color: #fff;
@@ -78,13 +133,6 @@ ul {
     right: 20px;
   }
 }
-.btn {
-  color: $cBlack;
-  background-color: rgb(228, 226, 226);
-  border: 1px solid $cBlack;
-  margin: 10px 0;
-}
-
 .member-link {
   display: flex;
   justify-content: center;
@@ -96,28 +144,7 @@ ul {
   max-width: 1170px;
   margin: 0 auto;
 }
-.home-container {
-  background-image: url('/public/img/tennisball.jpg');
-  background-position: center;
-  background-size: cover;
-  height: 100vw;
-}
-.home {
-  text-align: center;
-  color: #e0bb6c;
-  position: absolute;
-  width: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  h1 {
-    font-size: 60px;
-    margin-bottom: 15px;
-  }
-  a {
-    margin-right: 20px;
-  }
-}
+
 .section-head {
   display: flex;
   max-width: 1070px;
@@ -136,8 +163,16 @@ ul {
     margin-left: auto;
   }
 }
+.section-top {
+  max-width: 1070px;
+  margin: 20px auto;
+  .section-top-title {
+    text-align: center;
+    line-height: 80px;
+  }
+}
 textarea, input {
-  width: 50%;
+  width: 60%;
 }
 textarea {
   height: 100px;
