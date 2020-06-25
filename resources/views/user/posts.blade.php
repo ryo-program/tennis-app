@@ -1,8 +1,8 @@
 @extends('layouts.user.app')
 
 @section('content')
-<div class="section-head">
-  <h1 class="section-title">〜 Club Information 〜</h1>
+<div class="section-top">
+  <h1 class="section-top-title">〜 Club Information 〜</h1>
 </div>
 <div class="center-width">
   @foreach ($posts as $post)

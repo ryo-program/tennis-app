@@ -30,9 +30,9 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <!-- <ul class="navbar-nav ml-auto"> -->
                         <!-- Authentication Links -->
-                        @unless (Auth::guard('user')->check())
+                        <!-- @unless (Auth::guard('user')->check())
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('user.login') }}">{{ __('Login') }}</a>
                             </li>
@@ -41,8 +41,8 @@
                                     <a class="nav-link" href="{{ route('user.register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-                        @else
-                            <li class="nav-item dropdown">
+                        @else -->
+                            <!-- <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -56,11 +56,11 @@
 
                                     <form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
                                         @csrf
-                                    </form>
-                                </div>
+                                    </form> -->
+                                <!-- </div>
                             </li>
                         @endunless
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
         </nav>

@@ -1,4 +1,14 @@
 <?php
+// use Illuminate\Support\Facades\Route;
+
+
+Route::get('/', 'HomeController@index');
+Route::get('/posts', 'HomeController@posts')->name('posts');
+Route::resource('posts', 'HomeController', ['only' => ['show']]);
+Route::get('members', 'MembersController@index')->name('members');
+Route::get('members/first', 'MembersController@first')->name('first');
+Route::get('members/second', 'MembersController@second')->name('second');
+Route::get('members/third', 'MembersController@third')->name('third');
 
 Route::namespace('User')->prefix('user')->name('user.')->group(function () {
 
@@ -13,9 +23,9 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
     Route::middleware('auth:user')->group(function () {
 
         // TOPページ
+        Route::resource('home', 'HomeController', ['only' => 'index']);
         Route::get('posts', 'PostsController@index')->name('posts');
         Route::resource('posts', 'PostsController', ['only' => [ 'show']]);
-        Route::resource('home', 'HomeController', ['only' => 'index']);
 
     });
 });
