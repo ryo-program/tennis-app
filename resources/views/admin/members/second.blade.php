@@ -1,5 +1,11 @@
 @extends('layouts.admin.app')
 
+@section('header-link')
+  <li><a href="{{ route('admin.posts') }}" class="header-link">掲示板</a></li>
+  <li><a href="#" class="header-link">メッセージ</a></li>
+  <li><a href="{{ route('admin.members') }}" class="header-link">部員紹介</a></li>
+@endsection
+
 @section('content')
 <div class="center-width">
 <div class="section-top">

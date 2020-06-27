@@ -16,13 +16,10 @@
   <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
-            <a href="{{ route('admin.top') }}" class="header-link">庭球大学テニス部</a>
-            <ul class="header-ul">
-                <li><a href="{{ route('admin.posts') }}" class="header-link">掲示板</a></li>
-                <li><a href="#" class="header-link">メッセージ</a></li>
-                <li><a href="{{ route('admin.members') }}" class="header-link">メンバー紹介</a></li>
-            </ul>
-
+                <a href="{{ route('admin.top') }}" class="header-link">庭球大学テニス部</a>
+                <ul class="header-ul">
+                    @yield('header-link')
+                </ul>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     
                     <ul class="navbar-nav ml-auto">

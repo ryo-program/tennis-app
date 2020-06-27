@@ -10,7 +10,7 @@
         <h1>Tennis Club Introduction!</h1>
         <a href="{{ route('user.posts') }}" class="link">掲示板</a>
         <a href="#" class="link">メッセージ</a>
-        <a href="{{ route('user.members') }}" class="link">メンバー紹介</a>
+        <a href="{{ route('user.members') }}" class="link">部員紹介</a>
     </div>
 </div>
 @endsection

@@ -3,14 +3,14 @@
 @section('header-list')
   <li><a href="{{ route('user.posts') }}" class="header-link">掲示板</a></li>
   <li><a href="#" class="header-link">メッセージ</a></li>
-  <li><a href="{{ route('user.members') }}" class="header-link">メンバー紹介</a></li>
+  <li><a href="{{ route('user.members') }}" class="header-link">部員紹介</a></li>
   <li><a href="{{ route('admin.login') }}" class="header-link">管理者ログイン</a></li>
 @endsection
 
 @section('content')
   <div class="member-header">
     <div class="section-top">
-      <h1 class="section-top-title">〜 Members 〜</h1>
+      <h1 class="section-top-title">〜 部員紹介 〜</h1>
     </div>
     <ul class="center-width member-link">
       <li><a href="{{ route('first') }}" class="link">1年</a></li>
@@ -23,7 +23,7 @@
       <div class="post-item member-item">
         <div  class="profile-item">
           <figure>
-            <img src="../../uploads/{{ $member->profile_img }}" width="240px" height="200px">
+            <img src="uploads/{{ $member->profile_img }}" width="240px" height="200px">
           </figure>
           <dl>
             <dt>〜 名前 〜</dt>

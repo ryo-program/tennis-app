@@ -1,5 +1,12 @@
 @extends('layouts.user.app')
 
+@section('header-list')
+  <li><a href="{{ route('user.posts') }}" class="header-link">掲示板</a></li>
+  <li><a href="#" class="header-link">メッセージ</a></li>
+  <li><a href="{{ route('user.members') }}" class="header-link">部員紹介</a></li>
+  <li><a href="{{ route('admin.login') }}" class="header-link">管理者ログイン</a></li>
+@endsection
+
 @section('content')
   <div class="center-width">
     <div class="post-item">
