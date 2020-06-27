@@ -16,10 +16,18 @@ class HomeController extends Controller
     {
         return view('welcome');
     }
+    
     public function posts()
     {
         $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
         return view('user.posts', ['posts' => $posts]);
     }
+
+    public function show($post_id)
+    {
+        $post = Post::findOrFail($post_id);
+        return view('user.show', ['post' => $post]);
+    }
+
 }

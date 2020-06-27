@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="ja">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>庭球大学硬式テニス部</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -16,7 +16,7 @@
   <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
-            <a href="{{ route('admin.top') }}" class="header-link">TENNIS CLUB</a>
+            <a href="{{ route('admin.top') }}" class="header-link">庭球大学テニス部</a>
             <ul class="header-ul">
                 <li><a href="{{ route('admin.posts') }}" class="header-link">掲示板</a></li>
                 <li><a href="#" class="header-link">メッセージ</a></li>
@@ -29,11 +29,11 @@
                         <!-- Authentication Links -->
                         @unless (Auth::guard('admin')->check())
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.login') }}">ログイン</a>
+                                <a class="nav-link link" href="{{ route('admin.login') }}">ログイン</a>
                             </li>
                             @if (Route::has('admin.register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.register') }}">新規登録</a>
+                                    <a class="nav-link link" href="{{ route('admin.register') }}">新規登録</a>
                                 </li>
                             @endif
                         @else

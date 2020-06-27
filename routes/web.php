@@ -2,38 +2,18 @@
 // use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', 'HomeController@index');
-Route::get('/posts', 'HomeController@posts')->name('posts');
+Route::get('/', 'HomeController@index')->name('user.top');
+Route::get('/posts', 'HomeController@posts')->name('user.posts');
 Route::resource('posts', 'HomeController', ['only' => ['show']]);
-Route::get('members', 'MembersController@index')->name('members');
+Route::resource('comments', 'CommentsController', ['only' => ['store']]);
+Route::get('members', 'MembersController@membersDisplay')->name('user.members');
 Route::get('members/first', 'MembersController@first')->name('first');
 Route::get('members/second', 'MembersController@second')->name('second');
 Route::get('members/third', 'MembersController@third')->name('third');
 
-Route::namespace('User')->prefix('user')->name('user.')->group(function () {
-
-    // ログイン認証関連
-    Auth::routes([
-        'register' => true,
-        'reset'    => false,
-        'verify'   => false
-    ]);
-
-    // ログイン認証後
-    Route::middleware('auth:user')->group(function () {
-
-        // TOPページ
-        Route::resource('home', 'HomeController', ['only' => 'index']);
-        Route::get('posts', 'PostsController@index')->name('posts');
-        Route::resource('posts', 'PostsController', ['only' => [ 'show']]);
-
-    });
-});
-
 // 管理者
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
-    // ログイン認証関連
     Auth::routes([
         'register' => true,
         'reset'    => false,

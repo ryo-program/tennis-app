@@ -19,11 +19,10 @@
         @endforelse
       </div>
 
-      <form action="{{ route('admin.comments.store') }}" method="POST">
+      <form action="{{ route('comments.store') }}" method="POST">
         @csrf
         <input type="hidden" name="post_id" value="{{ $post->id }}">
         <div>
-          <!-- <label for="body">本文</label> -->
           <textarea name="body" id="body"  rows="10">{{ old('body') }}</textarea>
           @if ($errors->has('body'))
             <p class="error">{{ $errors->first('body') }}</p>

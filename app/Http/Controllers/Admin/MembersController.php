@@ -10,7 +10,8 @@ class MembersController extends Controller
 {
     public function index()
     {
-        return view('admin.members.members');
+        $members = Member::orderBy('created_at', 'desc')->get();
+        return view('admin.members.members', ['members' => $members]);
     }
 
     public function create()
