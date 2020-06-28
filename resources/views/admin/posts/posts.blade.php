@@ -2,13 +2,13 @@
 
 @section('header-link')
   <li><a href="{{ route('admin.posts') }}" class="header-link">掲示板</a></li>
-  <li><a href="#" class="header-link">メッセージ</a></li>
+  <li><a href="{{ route('admin.qa') }}" class="header-link">メッセージ</a></li>
   <li><a href="{{ route('admin.members') }}" class="header-link">部員紹介</a></li>
 @endsection
 
 @section('content')
 <div class="section-head">
-  <h1 class="section-title">〜 Club Information 〜</h1>
+  <h1 class="section-title">〜 部活掲示板 〜</h1>
   <a href="{{ route('admin.posts.create') }}" class="add cB">+</a>
 </div>
 <div class="center-width">

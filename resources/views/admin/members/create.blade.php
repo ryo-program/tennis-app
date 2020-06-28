@@ -14,7 +14,7 @@
     </div>
       <form action="{{ route('admin.members.store') }}" method="POST" class="post-item" enctype="multipart/form-data">
         @csrf
-        <div class="add-title">
+        <div class="pd-s">
           <p>名前</p>
           <input type="text" value="{{ old('name') }}" name="name">
           @if ($errors->has('name'))
@@ -22,7 +22,7 @@
           @endif
         </div>
 
-        <dl>
+        <dl class="pd-s">
           <dt>学年</dt>
           <dd>
             <input type="radio" name="year" value="1" id="first">
@@ -34,7 +34,7 @@
           </dd>
         </dl>
 
-        <div>
+        <div class="pd-s">
           <p>得意なショット</p>
           <textarea name="shot" rows="4" value="{{ old('shot') }}"></textarea>
           @if ($errors->has('shot'))
@@ -42,14 +42,14 @@
           @endif
         </div>
 
-        <div>
+        <div class="pd-s">
           <p>コメント</p>
           <textarea name="comment" rows="4" value="{{ old('comment') }}"></textarea>
           @if ($errors->has('comment'))
             <p class="error">{{ $errors->first('comment') }}</p>
           @endif
         </div>
-        <div>
+        <div class="pd-s">
           <p>画像</p>
           <input type="file" name="profile_img" >
         </div>

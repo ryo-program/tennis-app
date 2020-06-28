@@ -6,6 +6,8 @@ Route::get('/', 'HomeController@index')->name('user.top');
 Route::get('/posts', 'HomeController@posts')->name('user.posts');
 Route::resource('posts', 'HomeController', ['only' => ['show']]);
 Route::resource('comments', 'CommentsController', ['only' => ['store']]);
+Route::get('qa', 'User\qa\QuestionController@qa')->name('user.qa');
+Route::resource('qa', 'User\qa\QuestionController', ['only' => ['create', 'store']]);
 Route::get('members', 'MembersController@membersDisplay')->name('user.members');
 Route::get('members/first', 'MembersController@first')->name('first');
 Route::get('members/second', 'MembersController@second')->name('second');
@@ -27,6 +29,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('posts', 'PostsController@index')->name('posts');
         Route::resource('posts', 'PostsController', ['only' => ['create', 'store', 'show', 'destroy', 'edit', 'update']]);
         Route::resource('comments', 'CommentsController', ['only' => ['store']]);
+        Route::get('qa', 'qa\QuestionController@qa')->name('qa');
         Route::get('members', 'MembersController@index')->name('members');
         Route::get('members/first', 'MembersController@first')->name('first');
         Route::get('members/second', 'MembersController@second')->name('second');

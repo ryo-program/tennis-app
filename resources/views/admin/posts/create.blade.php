@@ -7,20 +7,20 @@
 @endsection
 
 @section('content')
-<div class="section-top">
-  <h1 class="section-top-title">〜 投稿の新規作成 〜</h1>
-</div>
+  <div class="section-top">
+    <h1 class="section-top-title">〜 投稿の新規作成 〜</h1>
+  </div>
   <div class="center-width">
     <form action="{{ route('admin.posts.store') }}" method="POST" class="post-item">
       @csrf
-      <div class="add-title">
+      <div class="pd-s">
         <p>タイトル</p>
         <input type="text" id="title" value="{{ old('title') }}" name="title">
         @if ($errors->has('title'))
           <p class="error">{{ $errors->first('title') }}</p>
         @endif
       </div>
-      <div>
+      <div class="pd-s">
         <p>本文</p>
         <textarea name="body" id="body" rows="4" value="{{ old('body') }}"></textarea>
         @if ($errors->has('body'))

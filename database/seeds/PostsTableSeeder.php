@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Post;
-use App\Comment;
+use App\Models\Post;
+use App\Models\Comment;
 
 class PostsTableSeeder extends Seeder
 {
@@ -11,7 +11,7 @@ class PostsTableSeeder extends Seeder
         factory(Post::class, 50)
             ->create()
             ->each(function ($post) {
-                $comments = factory(App\Comment::class, 2)->make();
+                $comments = factory(App\Models\Comment::class, 2)->make();
 
                 $post->comments()->saveMany($comments);
             });

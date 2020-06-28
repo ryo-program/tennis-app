@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Post;
+use App\Models\Post;
 
 class PostsController extends Controller
 {
@@ -12,12 +12,12 @@ class PostsController extends Controller
     {
         $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
-        return view('admin.posts', ['posts' => $posts]);
+        return view('admin.posts.posts', ['posts' => $posts]);
     }
 
     public function create()
     {
-        return view('admin.create');
+        return view('admin.posts.create');
     }
 
     public function store(Request $request)
@@ -35,13 +35,13 @@ class PostsController extends Controller
     public function show($post_id)
     {
         $post = Post::findOrFail($post_id);
-        return view('admin.show', ['post' => $post]);
+        return view('admin.posts.show', ['post' => $post]);
     }
 
     public function edit($post_id)
     {
         $post = Post::findOrFail($post_id);
-        return view('admin.edit', ['post' => $post]);
+        return view('admin.posts.edit', ['post' => $post]);
     }
 
     public function update(Request $request, $post_id)

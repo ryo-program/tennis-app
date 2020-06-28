@@ -2,14 +2,14 @@
 
 @section('header-list')
   <li><a href="{{ route('user.posts') }}" class="header-link">掲示板</a></li>
-  <li><a href="#" class="header-link">メッセージ</a></li>
+  <li><a href="{{ route('user.qa') }}" class="header-link">メッセージ</a></li>
   <li><a href="{{ route('user.members') }}" class="header-link">部員紹介</a></li>
   <li><a href="{{ route('admin.login') }}" class="header-link">管理者ログイン</a></li>
 @endsection
 
 @section('content')
 <div class="section-top">
-  <h1 class="section-top-title">〜 Club Information 〜</h1>
+  <h1 class="section-top-title">〜 部活掲示板 〜</h1>
 </div>
 <div class="center-width">
   @foreach ($posts as $post)
