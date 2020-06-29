@@ -30,6 +30,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::resource('posts', 'PostsController', ['only' => ['create', 'store', 'show', 'destroy', 'edit', 'update']]);
         Route::resource('comments', 'CommentsController', ['only' => ['store']]);
         Route::get('qa', 'qa\QuestionController@qa')->name('qa');
+        Route::resource('qa', 'qa\QuestionController', ['only' => ['show', 'store', 'destroy']]);
         Route::get('members', 'MembersController@index')->name('members');
         Route::get('members/first', 'MembersController@first')->name('first');
         Route::get('members/second', 'MembersController@second')->name('second');

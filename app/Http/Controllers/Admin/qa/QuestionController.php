@@ -15,19 +15,32 @@ class QuestionController extends Controller
         return view('admin.qa.qa', ['qas' => $qas]);
     }
 
-    // public function create()
-    // {
-    //     return view('admin.qa.create');
-    // }
+    public function show($question_id)
+    {
+        $question = Question::findOrFail($question_id);
+        return view('admin.qa.answer', ['question' => $question]);
+    }
 
-    // public function store(Request $request)
-    // {
-    //     $params = $request->validate([
-    //         'question' => 'required|max: 1000',
-    //     ]);
+    public function store(Request $request)
+    {
+        $answer = $request->validate([
+            'question_id' => 'required|exists:questions,id',
+            'answer' => 'required|max: 1000',
+        ]);
 
-    //     Question::create($params);
+        $question = Question::findOrFail($answer['question_id']);
+        $question->answers()->create($answer);
+        return redirect()->route('admin.qa');
+    }
 
-    //     return redirect()->route('qa');
-    // }
+    public function destroy($question_id)
+    {
+        $question = Question::findOrFail($question_id);
+        \DB::transaction(function() use ($question){
+            $question->answers()->delete();
+            $question->delete();
+        }); 
+
+        return redirect()->route('admin.qa');
+    }
 }

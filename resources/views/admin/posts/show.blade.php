@@ -1,8 +1,8 @@
 @extends('layouts.admin.app')
 
-@section('header-link')
+@section('header-list')
   <li><a href="{{ route('admin.posts') }}" class="header-link">掲示板</a></li>
-  <li><a href="{{ route('admin.qa') }}" class="header-link">メッセージ</a></li>
+  <li><a href="{{ route('admin.qa') }}" class="header-link">Q&A</a></li>
   <li><a href="{{ route('admin.members') }}" class="header-link">部員紹介</a></li>
 @endsection
 
@@ -32,7 +32,6 @@
         @csrf
         <input type="hidden" name="post_id" value="{{ $post->id }}">
         <div>
-          <!-- <label for="body">本文</label> -->
           <textarea name="body" id="body"  rows="10">{{ old('body') }}</textarea>
           @if ($errors->has('body'))
             <p class="error">{{ $errors->first('body') }}</p>

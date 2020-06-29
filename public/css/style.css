@@ -52,6 +52,17 @@ textarea {
   width: 100%;
 }
 
+.position {
+  position: absolute;
+  bottom: 8px;
+  right: 5px;
+}
+
+.red {
+  color: red;
+  margin: 10px 0;
+}
+
 .header-link {
   color: #fff;
   border: 1px solid #fff;
@@ -104,10 +115,6 @@ main.py-4 {
 
 .cB {
   color: #333;
-}
-
-.middle {
-  font-size: 20px;
 }
 
 .section-title {
@@ -245,6 +252,21 @@ textarea {
 
 .post-item .post-body {
   margin: 20px 0;
+}
+
+.question-item {
+  margin: 0 auto;
+  border: none;
+  position: relative;
+}
+
+.question-item:not(:last-child) {
+  border-bottom: 1px solid #333;
+}
+
+.question {
+  border: 2px solid #739ddd;
+  margin-top: 20px;
 }
 
 .profile-item {
