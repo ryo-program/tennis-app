@@ -267,6 +267,7 @@ textarea {
 .question {
   border: 2px solid #739ddd;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .profile-item {

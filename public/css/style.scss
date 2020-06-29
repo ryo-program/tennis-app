@@ -48,7 +48,6 @@ textarea {
 }
 .red {
   color: red;
-  // display: inline-block;
   margin: 10px 0;
 }
 .header-link {
@@ -227,6 +226,7 @@ textarea {
 .question {
   border: 2px solid $cVase;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .profile-item {

@@ -10,6 +10,7 @@ class DatabaseSeeder extends Seeder
             AdminsTableSeeder::class,
             PostsTableSeeder::class,
             MembersTableSeeder::class,
+            QuestionsTableSeeder::class,
         ]);
     }
 }
