@@ -43,14 +43,12 @@
 @section('script')
 <script>
   $(function(){
-  $(".del-btn").click(function(){
-  if(confirm("本当に削除しますか？")){
-  //そのままsubmit（削除）
-  }else{
-  //cancel
-  return false;
-  }
-  });
-  });
+    $(".del-btn").click(function(){
+      if(confirm("本当に削除しますか？")){
+      }else{
+        return false;
+      }
+    });
+  }); 
 </script>
 @endsection

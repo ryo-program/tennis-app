@@ -20,7 +20,7 @@
       </form>
       <div  class="profile-item">
         <figure>
-          <img src="../../uploads/{{ $member->profile_img }}" width="240px" height="200px">
+          <img src="{{ $member->profile_img }}" width="240px" height="200px">
         </figure>
         <dl>
           <dt>〜 名前 〜</dt>

@@ -1,7 +1,4 @@
 <?php
-// use Illuminate\Support\Facades\Route;
-
-
 Route::get('/', 'HomeController@index')->name('user.top');
 Route::get('/posts', 'HomeController@posts')->name('user.posts');
 Route::resource('posts', 'HomeController', ['only' => ['show']]);

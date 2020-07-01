@@ -21,18 +21,11 @@
                     @yield('header-list')
                 </ul>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
                         @unless (Auth::guard('admin')->check())
                             <li class="nav-item">
                                 <a class="nav-link link" href="{{ route('admin.login') }}">ログイン</a>
                             </li>
-                            <!-- @if (Route::has('admin.register'))
-                                <li class="nav-item">
-                                    <a class="nav-link link" href="{{ route('admin.register') }}">新規登録</a>
-                                </li>
-                            @endif -->
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class=" dropdown-toggle white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
