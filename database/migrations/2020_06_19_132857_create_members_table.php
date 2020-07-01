@@ -14,7 +14,7 @@ class CreateMembersTable extends Migration
             $table->string('name');
             $table->text('shot');
             $table->text('comment');
-            $table->string('profile_img');
+            $table->string('profile_img')->nullable();
             $table->timestamps();
         });
     }

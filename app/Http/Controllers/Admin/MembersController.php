@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Member;
+use Storage;
 
 class MembersController extends Controller
 {
@@ -24,13 +25,13 @@ class MembersController extends Controller
         $this->validate($request, Member::$rules);
 
         if ($file = $request->profile_img) {
-            // 保存するファイルに名前をつける
-            $fileName = time() . $file->getClientOriginalName();
-            //Laravel直下のpublicディレクトリに新フォルダをつくり保存する
-            $target_path = public_path('uploads/');
-            $file->move($target_path, $fileName);
+            $image = $request->file('profile_img');
+            $path = Storage::disk('s3')->putFile('tennisclub-app', $image, 'public');
+            // $fileName = time() . $file->getClientOriginalName();
+            // $target_path = public_path('uploads/');
+            // $file->move($target_path, $fileName);
         } else {
-            $fileName = "";
+            $path = "";
         }
 
         $member = new Member;
@@ -38,7 +39,7 @@ class MembersController extends Controller
         $member->year = $request->year;
         $member->shot = $request->shot;
         $member->comment = $request->comment;
-        $member->profile_img = $fileName;
+        $member->profile_img = Storage::disk('s3')->url($path);
         $member->save();
         
         return redirect()->route('admin.members');
