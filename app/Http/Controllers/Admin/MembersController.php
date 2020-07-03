@@ -24,19 +24,19 @@ class MembersController extends Controller
     {
         $this->validate($request, Member::$rules);
 
+        $member = new Member;
         if ($file = $request->profile_img) {
             $image = $request->file('profile_img');
             $path = Storage::disk('s3')->putFile('tennisclub-app', $image, 'public');
+            $member->profile_img = Storage::disk('s3')->url($path);
         } else {
             $path = "";
         }
 
-        $member = new Member;
         $member->name = $request->name;
         $member->year = $request->year;
         $member->shot = $request->shot;
         $member->comment = $request->comment;
-        $member->profile_img = Storage::disk('s3')->url($path);
         $member->save();
         
         return redirect()->route('admin.members');
