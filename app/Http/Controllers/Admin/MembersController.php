@@ -27,9 +27,6 @@ class MembersController extends Controller
         if ($file = $request->profile_img) {
             $image = $request->file('profile_img');
             $path = Storage::disk('s3')->putFile('tennisclub-app', $image, 'public');
-            // $fileName = time() . $file->getClientOriginalName();
-            // $target_path = public_path('uploads/');
-            // $file->move($target_path, $fileName);
         } else {
             $path = "";
         }
