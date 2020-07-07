@@ -18,6 +18,7 @@
             <div class="container">
                 <a href="{{ route('admin.top') }}" class="header-link">庭球大学テニス部</a>
                 <ul class="header-ul">
+                    <li><a href="{{ route('user.top') }}" class="header-link">ユーザー画面</a></li>
                     @yield('header-list')
                 </ul>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
